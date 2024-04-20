@@ -37,7 +37,7 @@ defineBlock({
 })
 
 const route = useRoute()
-const page = route.query.page ? Number(route.query.page) : 1
+const page = computed(() => (route.query.page ? Number(route.query.page) : 1))
 
 const { data } = await useFetch<
   PaginateResult<

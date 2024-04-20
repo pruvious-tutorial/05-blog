@@ -1,6 +1,6 @@
 <template>
   <Container class="space-y-23">
-    <div v-for="{ author, description, headline, path, publishDate, sharingImage } of data?.records">
+    <div v-for="{ author, description, headline, path, publishDate, sharingImage } of data?.records" :key="path">
       <div class="flex items-center gap-8 tp:flex-col">
         <PruviousPicture :image="sharingImage" :imgAttrs="{ class: 'w-95 h-auto shrink-0 rounded-md tp:w-full' }" />
         <div class="flex-1">
@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineBlock, type PaginateResult, type PopulatedFieldType } from '#pruvious'
+import { defineBlock, type PaginateResult, type PopulatedFieldType } from '#pruvious';
 
 defineBlock({
   icon: 'List',

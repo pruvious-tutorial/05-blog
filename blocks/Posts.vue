@@ -45,7 +45,7 @@ const { data } = await useFetch<
   >
 >('/api/posts', { query: { page } })
 
-if (!data.value?.records.length) {
+if (!data.value?.records.length && (page.value !== 1 || data.value?.total)) {
   if (process.server) {
     throw createError({ statusCode: 404 })
   } else {

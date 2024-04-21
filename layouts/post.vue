@@ -18,14 +18,14 @@
 </template>
 
 <script lang="ts" setup>
-import { defineLayout } from '#pruvious'
-import { getCollectionData, usePage } from '#pruvious/client'
+import { defineLayout } from '#pruvious';
+import { getCollectionData, usePage } from '#pruvious/client';
 
 defineLayout({
   allowedBlocks: ['Image', 'Prose'],
 })
 
-const page = usePage()
+const page = unref(usePage())
 const { blogLandingPage } = await getCollectionData('settings')
 </script>
 
